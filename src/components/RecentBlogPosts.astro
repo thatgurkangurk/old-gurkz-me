@@ -1,0 +1,33 @@
+---
+import BlogPost from '../components/BlogPost.astro'
+import type { BlogPost as BlogPostType } from '../types/BlogPost';
+
+const response = await fetch('https://api.hashnode.com',
+{
+	method: 'POST',
+	headers: { 'Content-Type': 'application/json' },
+	body: JSON.stringify({
+		query: `
+			query {
+				user(username: "thatgurkangurk") {
+					publication {
+						posts(page: 0) {
+							slug
+							title
+                            brief
+						}
+					}
+				}
+			}
+		`
+	})
+});
+
+const json = await response.json()
+const posts = json.data.user.publication.posts as BlogPostType[];
+---
+
+<h1>most recent blog posts</h1>
+{posts.map((post) => (
+    <BlogPost title={post.title} slug={post.slug} brief={post.brief} />
+))}
