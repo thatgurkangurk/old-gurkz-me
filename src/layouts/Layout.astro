@@ -1,3 +1,7 @@
+---
+import Link from "../components/Link.astro";
+---
+
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -8,7 +12,12 @@
 	</head>
 	<body class="bg-black text-white m-auto p-5">
         <header class="pb-2">
-            <h1 class="text-2xl text-center">gurkan's website</h1>
+            <h1 class="text-2xl text-center">gurkan's website</h1>  
+            <div class="text-center">
+                <Link to="/">home</Link>
+                <Link to="/gmod">garry's mod</Link>
+                <Link to="/smp">smp</Link>
+            </div>
         </header>
 		<main>
             <slot />

@@ -1,0 +1,12 @@
+---
+interface Props {
+    to: string;
+    underlined?: boolean;
+}
+
+const pathname = new URL(Astro.request.url).pathname;
+const { to, underlined = false } = Astro.props;
+const isActive = pathname === to;
+---
+
+<a href={to} class={`${isActive ? "text-themeColor underline underline-offset-4" : ""} ${underlined ? "text-themeColor underline underline-offset-4" : ""}`}><slot /></a>
