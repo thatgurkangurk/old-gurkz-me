@@ -1,12 +1,26 @@
 <script lang="ts">
-    import Header from '../components/Header.svelte';
-    import '../styles/global.css'
+	import { navigating } from '$app/stores';
+	import Header from '../components/Header.svelte';
+	import '../styles/global.css';
+	import NProgress from 'nprogress';
+
+	NProgress.configure({
+		minimum: 0.16
+	});
+
+	$: {
+		if ($navigating) {
+			NProgress.start();
+		}
+		if (!$navigating) {
+			NProgress.done();
+		}
+	}
 </script>
 
 <header class="pb-2">
-    <Header />
+	<Header />
 </header>
 <main>
-    <slot />
+	<slot />
 </main>
-
