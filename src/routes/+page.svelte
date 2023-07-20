@@ -1,1 +1,1 @@
-<h1>welcome to gurkans website</h1>
+<h1 class="text-lg">hello there! welcome to my website!</h1>

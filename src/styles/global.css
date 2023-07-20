@@ -1,0 +1,16 @@
+/* global css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    color-scheme: dark;
+    margin-left: calc(100vw - 100%);
+    margin-right: 0;
+}
+
+body {
+    font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+    width: 100%;
+    max-width: 65ch;
+}
