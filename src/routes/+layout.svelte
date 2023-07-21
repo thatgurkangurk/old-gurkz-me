@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { SvelteToast } from '@zerodevx/svelte-toast'
 	import { navigating } from '$app/stores';
 	import Header from '../components/Header.svelte';
 	import '../styles/global.css';
@@ -19,6 +20,7 @@
 	}
 </script>
 
+<SvelteToast options={{ reversed: true, intro: { y: 64 }, duration: 2000 }} />
 <header class="pb-2">
 	<Header />
 </header>

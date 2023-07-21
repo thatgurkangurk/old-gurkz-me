@@ -20,6 +20,9 @@ devDependencies:
   '@typescript-eslint/parser':
     specifier: ^5.45.0
     version: 5.62.0(eslint@8.45.0)(typescript@5.1.6)
+  '@zerodevx/svelte-toast':
+    specifier: ^0.9.5
+    version: 0.9.5(svelte@4.1.1)
   autoprefixer:
     specifier: ^10.4.14
     version: 10.4.14(postcss@8.4.26)
@@ -50,6 +53,9 @@ devDependencies:
   svelte-check:
     specifier: ^3.4.3
     version: 3.4.6(postcss@8.4.26)(svelte@4.1.1)
+  svelte-copy:
+    specifier: ^1.4.1
+    version: 1.4.1(svelte@4.1.1)
   tailwindcss:
     specifier: ^3.3.3
     version: 3.3.3
@@ -672,6 +678,14 @@ packages:
     transitivePeerDependencies:
       - encoding
       - supports-color
+    dev: true
+
+  /@zerodevx/svelte-toast@0.9.5(svelte@4.1.1):
+    resolution: {integrity: sha512-JLeB/oRdJfT+dz9A5bgd3Z7TuQnBQbeUtXrGIrNWMGqWbabpepBF2KxtWVhL2qtxpRqhae2f6NAOzH7xs4jUSw==}
+    peerDependencies:
+      svelte: ^3.57.0 || ^4.0.0
+    dependencies:
+      svelte: 4.1.1
     dev: true
 
   /abbrev@1.1.1:
@@ -2235,6 +2249,14 @@ packages:
       - sass
       - stylus
       - sugarss
+    dev: true
+
+  /svelte-copy@1.4.1(svelte@4.1.1):
+    resolution: {integrity: sha512-ixNNlTfIQWYnQzE0pdMYVCS/2jzMhXm41jmtSvk8EK2Dh+B5sDFEz2xYYo4fVtwtK0dLW5M5ZH/Rs5Jah0r6dw==}
+    peerDependencies:
+      svelte: ^3.55.0 || ^4.0.0
+    dependencies:
+      svelte: 4.1.1
     dev: true
 
   /svelte-eslint-parser@0.32.2(svelte@4.1.1):

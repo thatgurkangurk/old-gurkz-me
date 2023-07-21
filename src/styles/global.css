@@ -14,3 +14,10 @@ body {
     width: 100%;
     max-width: 65ch;
 }
+
+:root {
+    --toastContainerTop: auto;
+    --toastContainerRight: auto;
+    --toastContainerBottom: 8rem;
+    --toastContainerLeft: calc(50vw - 8rem);
+}
