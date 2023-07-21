@@ -1,7 +1,6 @@
 <script lang="ts">
-	import { page } from "$app/stores";
-
     export let to: string;
+    export let underlined: boolean;
 </script>
 
-<a href={to} class={`${$page.url.pathname === to ? "text-themeColor underline underline-offset-4" : ""}`}><slot /></a>
+<a href={to} class={`${underlined ? "text-themeColor underline underline-offset-4" : ""}`}><slot /></a>

@@ -1,13 +1,15 @@
 <script lang="ts">
-    import { SvelteToast } from '@zerodevx/svelte-toast'
+	import { SvelteToast } from '@zerodevx/svelte-toast';
 	import { navigating } from '$app/stores';
 	import Header from '../components/Header.svelte';
 	import '../styles/global.css';
 	import NProgress from 'nprogress';
-    import 'nprogress/nprogress.css';
+	import 'nprogress/nprogress.css';
+	import { browser } from '$app/environment';
+	import { QueryClient, QueryClientProvider } from '@tanstack/svelte-query';
 
 	NProgress.configure({
-		minimum: 0.16,
+		minimum: 0.16
 	});
 
 	$: {
@@ -18,12 +20,22 @@
 			NProgress.done();
 		}
 	}
+
+	const queryClient = new QueryClient({
+		defaultOptions: {
+			queries: {
+				enabled: browser
+			}
+		}
+	});
 </script>
 
-<SvelteToast options={{ reversed: true, intro: { y: 64 }, duration: 2000 }} />
-<header class="pb-2">
-	<Header />
-</header>
-<main>
-	<slot />
-</main>
+<QueryClientProvider client={queryClient}>
+	<SvelteToast options={{ reversed: true, intro: { y: 64 }, duration: 2000 }} />
+	<header class="pb-2">
+		<Header />
+	</header>
+	<main>
+		<slot />
+	</main>
+</QueryClientProvider>

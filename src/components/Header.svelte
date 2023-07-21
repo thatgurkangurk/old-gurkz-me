@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Link from "./Link.svelte";
+	import Link from "./NavLink.svelte";
 
 </script>
 <h1 class="text-2xl text-center">gurkan's website</h1>  
