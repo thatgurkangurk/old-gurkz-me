@@ -23,11 +23,11 @@
 		queryKey: ['status'],
 		queryFn: async () => await getStatus('mc.gurkz.me'),
 		initialData: data.status,
-		refetchInterval: 300000
+		refetchInterval: 3000
 	});
 
 	$: {
-		if ($query.isLoading) {
+		if ($query.isRefetching) {
 			nProgress.start();
 		}
 

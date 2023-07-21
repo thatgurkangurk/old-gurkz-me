@@ -13,4 +13,4 @@
     <h1>The server is not online.</h1>
 {/if}
 
-<p class="text-gray-500 text-sm">refetches every 5 minutes</p>
+<p class="text-gray-500 text-sm">refetches every 3 seconds</p>
