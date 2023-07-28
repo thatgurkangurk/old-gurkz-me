@@ -67,6 +67,4 @@ export const GET = (async ({ params }) => {
 
         return json(status, options)
     }
-
-    return new Response(String("uwu"));
 }) satisfies RequestHandler
