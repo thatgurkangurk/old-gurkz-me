@@ -18,7 +18,7 @@ export const GET = (async ({ params }) => {
     }).catch((err) => console.error("connection error", err.stack));
 
     if (!client) {
-        throw error(404, JSON.stringify({
+        return json(JSON.stringify({
             online: false,
             version: {
                 name: "",
