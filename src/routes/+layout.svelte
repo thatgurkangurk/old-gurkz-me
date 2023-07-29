@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { SvelteToast } from '@zerodevx/svelte-toast';
-	import { navigating } from '$app/stores';
+	import { navigating, page } from '$app/stores';
 	import Header from '../components/Header.svelte';
 	import '../styles/global.css';
 	import NProgress from 'nprogress';
@@ -33,7 +33,7 @@
 <QueryClientProvider client={queryClient}>
 	<SvelteToast options={{ reversed: true, intro: { y: 64 }, duration: 2000 }} />
 	<header class="pb-2">
-		<Header />
+		<Header session={$page.data.session} />
 	</header>
 	<main>
 		<slot />
