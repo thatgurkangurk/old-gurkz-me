@@ -33,7 +33,7 @@
 <QueryClientProvider client={queryClient}>
 	<SvelteToast options={{ reversed: true, intro: { y: 64 }, duration: 2000 }} />
 	<header class="pb-2">
-		<Header session={$page.data.session} />
+		<Header />
 	</header>
 	<main>
 		<slot />
